@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:14.10-alpine
+    volumes:
+      - produtos:/var/lib/postgresql/data
+    container_name: produtos_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: produto
+    ports:
+      - "5432:5432"
+    restart: always
+volumes:
+  produtos:
